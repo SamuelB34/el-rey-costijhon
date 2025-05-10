@@ -1,0 +1,50 @@
+@use "src/shared/scss/_variables.scss" as vars;
+
+.menu {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+
+	&__title {
+		font-size: 24px;
+		color: vars.$primary;
+		font-family: Jua, sans-serif;
+	}
+
+	&__destacados {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		justify-content: flex-start;
+		width: 100%;
+
+		.subtitle {
+			font-family: Inter, sans-serif;
+			font-size: 16px;
+			color: vars.$primary;
+			font-weight: bold;
+		}
+	}
+
+	&__scroll {
+		width: 100%;
+		display: flex;
+		gap: 16px;
+		overflow-x: scroll;
+
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}
+
+.separator {
+	width: 100%;
+	height: 1px;
+	background-color: #c9c9c9;
+}

@@ -1,0 +1,23 @@
+.whatsapp {
+	position: fixed;
+	bottom: 16px;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	background-color: #25d366;
+	width: 253px;
+	padding: 8px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	cursor: pointer;
+	text-decoration: none;
+
+	&__txt {
+		font-family: Inter, sans-serif;
+		font-weight: 700;
+		color: #fff;
+		font-size: 20px;
+	}
+}
