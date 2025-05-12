@@ -5,7 +5,11 @@ export const Ubicacion = () => {
 	return (
 		<div className={styles.ubicacion}>
 			<span className={styles.ubicacion__title}>Ubicacion</span>
-			<a href="https://maps.app.goo.gl/X89LnZRaFHUX7FvM7" target="_blank">
+			<a
+				href="https://maps.app.goo.gl/X89LnZRaFHUX7FvM7"
+				target="_blank"
+				className={styles.ubicacion__img}
+			>
 				<Image
 					src={"/ubicacion/ubicacion.svg"}
 					alt={"ubicacion"}

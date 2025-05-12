@@ -28,13 +28,13 @@ export const destacados = [
 
 export const costillas = [
 	{
-		imageUrl: "/images/costillas.svg",
+		imageUrl: "/images/charola.svg",
 		name: "Charola",
 		price: 475,
 		description: "1.2 kg de costillas, 5 elotes y 5 papas",
 	},
 	{
-		imageUrl: "/images/costillas.svg",
+		imageUrl: "/images/gratinada.svg",
 		name: "Charola Gratinada",
 		price: 525,
 		description:
