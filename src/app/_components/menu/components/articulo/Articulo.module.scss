@@ -3,9 +3,11 @@
 .articulo {
 	padding: 8px;
 	background-color: #fff;
-	display: flex;
+	display: grid;
+	grid-template-columns: auto 108px;
 	justify-content: space-between;
 	border-radius: 6px;
+	gap: 8px;
 
 	&__container {
 		width: 108px;
