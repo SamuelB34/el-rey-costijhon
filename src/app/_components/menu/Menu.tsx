@@ -1,5 +1,9 @@
+"use client"
 import styles from "./Menu.module.scss"
-import { Destacado } from "@/app/_components/menu/components/destacado/Destacado"
+import {
+	Destacado,
+	Product,
+} from "@/app/_components/menu/components/destacado/Destacado"
 import { Articulo } from "@/app/_components/menu/components/articulo/Articulo"
 import {
 	chicharrones,
@@ -8,9 +12,16 @@ import {
 	hamburguesas,
 	papas,
 } from "@/app/_components/menu/mock"
-import { Fragment } from "react"
+import { Fragment, useEffect } from "react"
+import { usePedido } from "@/shared/store/PedidoContext"
 
 export const Menu = () => {
+	const { pedido, addItem } = usePedido()
+
+	const addItemToPedido = (product: Product) => {
+		addItem({ ...product, quantity: 1 })
+	}
+
 	return (
 		<div className={styles.menu}>
 			<span className={styles.menu__title}>Menu</span>
@@ -23,6 +34,7 @@ export const Menu = () => {
 								imageUrl={destacado.imageUrl}
 								name={destacado.name}
 								price={destacado.price}
+								onClick={addItemToPedido}
 							/>
 						</Fragment>
 					))}
@@ -39,6 +51,7 @@ export const Menu = () => {
 							name={costilla.name}
 							price={costilla.price}
 							description={costilla.description}
+							onClick={addItemToPedido}
 						/>
 					</Fragment>
 				))}
@@ -54,6 +67,7 @@ export const Menu = () => {
 							name={hamburguesa.name}
 							price={hamburguesa.price}
 							description={hamburguesa.description}
+							onClick={addItemToPedido}
 						/>
 					</Fragment>
 				))}
@@ -69,6 +83,7 @@ export const Menu = () => {
 							name={papa.name}
 							price={papa.price}
 							description={papa.description}
+							onClick={addItemToPedido}
 						/>
 					</Fragment>
 				))}
@@ -84,6 +99,7 @@ export const Menu = () => {
 							name={chicharron.name}
 							price={chicharron.price}
 							description={chicharron.description}
+							onClick={addItemToPedido}
 						/>
 					</Fragment>
 				))}

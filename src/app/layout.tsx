@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Jua, Inter } from "next/font/google"
 import "./globals.scss"
+import { PedidoProvider } from "@/shared/store/PedidoContext"
 
 const jua = Jua({
 	variable: "--font-geist-mono",
@@ -26,7 +27,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${jua.variable} ${inter.variable}`}>{children}</body>
+			<body className={`${jua.variable} ${inter.variable}`}>
+				<PedidoProvider>{children}</PedidoProvider>
+			</body>
 		</html>
 	)
 }

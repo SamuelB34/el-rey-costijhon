@@ -1,13 +1,20 @@
+"use client"
 import styles from "./WhatsApp.module.scss"
 import Image from "next/image"
+import { usePedido } from "@/shared/store/PedidoContext"
 
 export const WhatsApp = () => {
+	const { pedido } = usePedido()
+
+	const mensaje = `Hola!%0AMe%20gustaria%20hacer%20un%20pedido%20de:%0A${pedido
+		.map((item) => `- ${item.name}`)
+		.join("%0A")}`
+
+	const numeroWhatsApp = "5216861667777"
+	const href = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`
+
 	return (
-		<a
-			href="https://wa.me/5216861667777?text=Hola%21%0AMe%20gustaria%20hacer%20un%20pedido%20de%3A"
-			target="_blank"
-			className={styles.whatsapp}
-		>
+		<a href={href} target="_blank" className={styles.whatsapp}>
 			<Image
 				src={"/icons/whatsapp.svg"}
 				alt={"whatsapp"}

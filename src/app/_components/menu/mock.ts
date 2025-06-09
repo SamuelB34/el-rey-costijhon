@@ -5,24 +5,24 @@ export const destacados = [
 		price: 170,
 	},
 	{
-		imageUrl: "/images/costillas.svg",
-		name: "Orden de costillas",
+		imageUrl: "/images/costiburguer.svg",
+		name: "Costiburguer",
 		price: 170,
 	},
 	{
-		imageUrl: "/images/costillas.svg",
-		name: "Orden de costillas",
-		price: 170,
+		imageUrl: "/images/porkbelly.svg",
+		name: "Chicharron porkbelly",
+		price: 350,
 	},
 	{
-		imageUrl: "/images/costillas.svg",
-		name: "Orden de costillas",
-		price: 170,
+		imageUrl: "/images/gratinada.svg",
+		name: "Charola Gratinada",
+		price: 525,
 	},
 	{
-		imageUrl: "/images/costillas.svg",
-		name: "Orden de costillas",
-		price: 170,
+		imageUrl: "/images/papa.svg",
+		name: "Papa gratinada",
+		price: 120,
 	},
 ]
 
@@ -53,7 +53,7 @@ export const costillas = [
 		description: "500 gr de costilla, 2 elotes y 1 papa",
 	},
 	{
-		imageUrl: "/images/costillas.svg",
+		imageUrl: "/images/costillas-individual.svg",
 		name: "Individual",
 		price: 170,
 		description: "250 gr de costilla, 1 elote y 1 papa",
@@ -67,6 +67,13 @@ export const hamburguesas = [
 		price: 120,
 		description:
 			"Carne de res, tocino, cebolla caramelizada, verduras y papas fritas",
+	},
+	{
+		imageUrl: "/images/costiburguer.svg",
+		name: "Costiburguer",
+		price: 170,
+		description:
+			"Carne de res, tomate, cebolla caramelizada, tocino, queso amarillo y aderezos",
 	},
 ]
 
