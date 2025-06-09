@@ -1,6 +1,7 @@
 "use client"
 import React, { createContext, useContext, useState, ReactNode } from "react"
 import { Product } from "@/app/_components/menu/components/destacado/Destacado"
+import toast from "react-hot-toast"
 
 type PedidoContextType = {
 	pedido: Product[]
@@ -42,6 +43,7 @@ export const PedidoProvider = ({ children }: { children: ReactNode }) => {
 			}
 			return [...prev, { ...item, quantity: 1 }]
 		})
+		toast.success("Producto agregado correctamente")
 	}
 
 	const removeItem = (item: Product) => {

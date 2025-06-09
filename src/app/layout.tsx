@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Jua, Inter } from "next/font/google"
 import "./globals.scss"
 import { PedidoProvider } from "@/shared/store/PedidoContext"
+import { Toaster } from "react-hot-toast"
 
 const jua = Jua({
 	variable: "--font-geist-mono",
@@ -29,6 +30,23 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${jua.variable} ${inter.variable}`}>
 				<PedidoProvider>{children}</PedidoProvider>
+				<Toaster
+					position="bottom-center"
+					toastOptions={{
+						style: {
+							fontFamily: "Inter, sans-serif",
+							fontSize: "14px",
+							padding: "16px 24px",
+							marginBottom: "80px", // esto afecta entre toasts
+						},
+						success: {
+							iconTheme: {
+								primary: "#4ade80", // verde
+								secondary: "#ecfdf5",
+							},
+						},
+					}}
+				/>
 			</body>
 		</html>
 	)

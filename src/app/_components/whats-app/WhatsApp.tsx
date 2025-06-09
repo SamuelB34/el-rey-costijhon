@@ -2,6 +2,7 @@
 import styles from "./WhatsApp.module.scss"
 import Image from "next/image"
 import { usePedido } from "@/shared/store/PedidoContext"
+import toast from "react-hot-toast"
 
 export const WhatsApp = () => {
 	const { pedido, showCart, setShowCart, nombre, entregaDomicilio, domicilio } =
@@ -29,17 +30,17 @@ export const WhatsApp = () => {
 
 		// 🔒 Validaciones
 		if (pedido.length === 0) {
-			alert("Tu carrito está vacío.")
+			toast.error("Tu carrito está vacío.")
 			return
 		}
 
 		if (!nombre.trim()) {
-			alert("Por favor escribe tu nombre.")
+			toast.error("Por favor escribe tu nombre.")
 			return
 		}
 
 		if (entregaDomicilio && !domicilio.trim()) {
-			alert("Por favor escribe tu domicilio para la entrega.")
+			toast.error("Por favor escribe tu domicilio para la entrega.")
 			return
 		}
 
