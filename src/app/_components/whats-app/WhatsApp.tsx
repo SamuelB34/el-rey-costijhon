@@ -7,7 +7,7 @@ export const WhatsApp = () => {
 	const { pedido } = usePedido()
 
 	const mensaje = `Hola!%0AMe%20gustaria%20hacer%20un%20pedido%20de:%0A${pedido
-		.map((item) => `- ${item.name}`)
+		.map((item) => `- ${item.quantity}x ${item.name}`)
 		.join("%0A")}`
 
 	const numeroWhatsApp = "5216861667777"

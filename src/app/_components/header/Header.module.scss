@@ -6,4 +6,29 @@
 	position: sticky;
 	top: 0;
 	background-color: #e9e9e9;
+
+	.cart {
+		width: 24px;
+		height: 24px;
+		position: relative;
+
+		&__count {
+			position: absolute;
+			right: -6px;
+			top: -8px;
+			background-color: #ff0000;
+			height: 16px;
+			width: 16px;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			span {
+				color: #fff;
+				font-family: Inter, sans-serif;
+				font-size: 12px;
+			}
+		}
+	}
 }
