@@ -4,6 +4,7 @@ import { Horario } from "@/app/_components/horario/Horario"
 import { Ubicacion } from "@/app/_components/ubicacion/Ubicacion"
 import { Menu } from "@/app/_components/menu/Menu"
 import { WhatsApp } from "@/app/_components/whats-app/WhatsApp"
+import { Cart } from "@/app/_components/cart/Cart"
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 				<Ubicacion />
 				<Menu />
 				<WhatsApp />
+				<Cart />
 			</main>
 		</div>
 	)

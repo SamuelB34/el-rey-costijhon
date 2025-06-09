@@ -6,7 +6,7 @@ import Image from "next/image"
 import { usePedido } from "@/shared/store/PedidoContext"
 
 export const Header = () => {
-	const { pedido } = usePedido()
+	const { pedido, setShowCart } = usePedido()
 	const [checked, setChecked] = useState<boolean>(false)
 	const [articlesCount, setArticlesCount] = useState(0)
 
@@ -27,7 +27,12 @@ export const Header = () => {
 				}}
 			/>
 			<Image src={"/logo.svg"} alt={"logo"} width="113" height="42" />
-			<div className={styles.cart}>
+			<div
+				className={styles.cart}
+				onClick={() => {
+					setShowCart(true)
+				}}
+			>
 				<div className={styles.cart__count}>
 					<span>{articlesCount}</span>
 				</div>
