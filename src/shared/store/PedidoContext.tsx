@@ -18,9 +18,9 @@ type PedidoContextType = {
 	domicilio: string
 	setDomicilio: (domicilio: string) => void
 	saboresPorItem: Record<number, string[]>
-	setSaboresPorItem: (val: (prev) => any) => void
+	setSaboresPorItem: (val: (prev: any) => any) => void
 	notaPorItem: Record<number, string>
-	setNotaPorItem: (val: (prev) => any) => void
+	setNotaPorItem: (val: (prev: any) => any) => void
 }
 
 const PedidoContext = createContext<PedidoContextType | undefined>(undefined)
