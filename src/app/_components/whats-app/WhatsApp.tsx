@@ -5,11 +5,32 @@ import { usePedido } from "@/shared/store/PedidoContext"
 import toast from "react-hot-toast"
 
 export const WhatsApp = () => {
-	const { pedido, showCart, setShowCart, nombre, entregaDomicilio, domicilio } =
-		usePedido()
+	const {
+		pedido,
+		showCart,
+		setShowCart,
+		nombre,
+		entregaDomicilio,
+		domicilio,
+		saboresPorItem,
+		notaPorItem,
+	} = usePedido()
 
 	const mensaje = `Hola!%0AMe%20gustaria%20hacer%20un%20pedido%20de:%0A${pedido
-		.map((item) => `- ${item.quantity}x ${item.name}`)
+		.map((item, index) => {
+			const base = `- ${item.quantity}x ${item.name}`
+
+			const sabores =
+				item.type === "costillas" && saboresPorItem[index]?.length
+					? `%0A  Sabores: ${saboresPorItem[index].join(", ")}`
+					: ""
+
+			const nota = notaPorItem[index]
+				? `%0A  Nota: ${encodeURIComponent(notaPorItem[index])}`
+				: ""
+
+			return `${base}${sabores}${nota}`
+		})
 		.join("%0A")}%0A%0AA%20nombre%20de:%20${encodeURIComponent(nombre)}${
 		entregaDomicilio
 			? `%0AEntrega%20a%20domicilio%2C%20a%20la%20direccion%3A%20${encodeURIComponent(

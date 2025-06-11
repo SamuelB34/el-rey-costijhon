@@ -18,8 +18,11 @@ import { usePedido } from "@/shared/store/PedidoContext"
 export const Menu = () => {
 	const { pedido, addItem } = usePedido()
 
-	const addItemToPedido = (product: Product) => {
-		addItem({ ...product, quantity: 1 })
+	const addItemToPedido = (
+		product: Product,
+		type: "costillas" | "papas" | "hamburguesa" | "chicharron"
+	) => {
+		addItem({ ...product, quantity: 1, type })
 	}
 
 	return (
@@ -34,7 +37,9 @@ export const Menu = () => {
 								imageUrl={destacado.imageUrl}
 								name={destacado.name}
 								price={destacado.price}
-								onClick={addItemToPedido}
+								onClick={(product) => {
+									addItemToPedido(product, "costillas")
+								}}
 							/>
 						</Fragment>
 					))}
@@ -51,7 +56,9 @@ export const Menu = () => {
 							name={costilla.name}
 							price={costilla.price}
 							description={costilla.description}
-							onClick={addItemToPedido}
+							onClick={(product) => {
+								addItemToPedido(product, "costillas")
+							}}
 						/>
 					</Fragment>
 				))}
@@ -67,7 +74,9 @@ export const Menu = () => {
 							name={hamburguesa.name}
 							price={hamburguesa.price}
 							description={hamburguesa.description}
-							onClick={addItemToPedido}
+							onClick={(product) => {
+								addItemToPedido(product, "hamburguesa")
+							}}
 						/>
 					</Fragment>
 				))}
@@ -83,7 +92,9 @@ export const Menu = () => {
 							name={papa.name}
 							price={papa.price}
 							description={papa.description}
-							onClick={addItemToPedido}
+							onClick={(product) => {
+								addItemToPedido(product, "papas")
+							}}
 						/>
 					</Fragment>
 				))}
@@ -99,7 +110,9 @@ export const Menu = () => {
 							name={chicharron.name}
 							price={chicharron.price}
 							description={chicharron.description}
-							onClick={addItemToPedido}
+							onClick={(product) => {
+								addItemToPedido(product, "chicharron")
+							}}
 						/>
 					</Fragment>
 				))}

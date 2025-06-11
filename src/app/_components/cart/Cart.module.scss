@@ -32,6 +32,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		max-height: calc(100svh - 160px);
+		overflow: scroll;
 
 		.x {
 			position: absolute;
@@ -56,35 +58,59 @@
 		gap: 32px;
 		padding: 32px 0;
 
-		.articles {
+		.row {
 			display: flex;
-			justify-content: space-between;
+			flex-direction: column;
+			gap: 16px;
 			width: 100%;
 
-			.left {
+			.articles {
 				display: flex;
-				flex-direction: column;
-				gap: 4px;
+				justify-content: space-between;
+				width: 100%;
 
-				.name {
-					font-family: Inter, sans-serif;
-					font-size: 16px;
-					color: #212121;
-					font-weight: 500;
+				.left {
+					display: flex;
+					flex-direction: column;
+					gap: 4px;
+
+					.name {
+						font-family: Inter, sans-serif;
+						font-size: 16px;
+						color: #212121;
+						font-weight: 500;
+					}
+
+					.price {
+						font-family: Inter, sans-serif;
+						font-size: 16px;
+						color: #212121;
+						font-weight: bold;
+					}
 				}
 
-				.price {
+				.article {
 					font-family: Inter, sans-serif;
 					font-size: 16px;
 					color: #212121;
-					font-weight: bold;
 				}
 			}
 
-			.article {
-				font-family: Inter, sans-serif;
-				font-size: 16px;
-				color: #212121;
+			.more_details {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+				gap: 8px;
+
+				span {
+					font-family: Inter, sans-serif;
+					font-size: 14px;
+				}
+
+				&__chevron {
+					rotate: 180deg;
+				}
 			}
 		}
 
@@ -147,6 +173,7 @@
 		border-radius: 4px;
 		margin-top: 4px;
 		font-size: 14px;
+		font-family: Inter, sans-serif;
 	}
 
 	.checkbox {
@@ -166,4 +193,45 @@
 		text-align: right;
 		font-family: Inter, sans-serif;
 	}
+}
+
+.sabores {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	margin-top: 8px;
+
+	label {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 14px;
+	}
+}
+
+.nota {
+	margin-top: 12px;
+
+	textarea {
+		width: 100%;
+		min-height: 60px;
+		padding: 8px;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+		resize: vertical;
+	}
+}
+
+.checkbox {
+	font-family: Inter, sans-serif;
+	font-size: 14px;
+}
+
+.input {
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-top: 4px;
+	font-size: 14px;
+	font-family: Inter, sans-serif;
 }

@@ -17,6 +17,10 @@ type PedidoContextType = {
 	setEntregaDomicilio: (val: boolean) => void
 	domicilio: string
 	setDomicilio: (domicilio: string) => void
+	saboresPorItem: Record<number, string[]>
+	setSaboresPorItem: (val: (prev) => any) => void
+	notaPorItem: Record<number, string>
+	setNotaPorItem: (val: (prev) => any) => void
 }
 
 const PedidoContext = createContext<PedidoContextType | undefined>(undefined)
@@ -27,6 +31,10 @@ export const PedidoProvider = ({ children }: { children: ReactNode }) => {
 	const [nombre, setNombre] = useState("")
 	const [entregaDomicilio, setEntregaDomicilio] = useState(false)
 	const [domicilio, setDomicilio] = useState("")
+	const [saboresPorItem, setSaboresPorItem] = useState<
+		Record<number, string[]>
+	>({})
+	const [notaPorItem, setNotaPorItem] = useState<Record<number, string>>({})
 
 	const addItem = (item: Product) => {
 		setPedido((prev) => {
@@ -91,6 +99,10 @@ export const PedidoProvider = ({ children }: { children: ReactNode }) => {
 				setEntregaDomicilio,
 				domicilio,
 				setDomicilio,
+				saboresPorItem,
+				setSaboresPorItem,
+				notaPorItem,
+				setNotaPorItem,
 			}}
 		>
 			{children}
